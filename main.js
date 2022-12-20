@@ -71,7 +71,7 @@ if (argv.mode === "CLUSTER" && cluster.isPrimary) {
   const serverConnected = httpServer.listen(PORT, () => {
     ProductsModel.connect().then(() => {
       console.log("Connected to DB!");
-      console.log("Server is up and running on port: ", +PORT);
+      console.log(process.pid, "==> Server is up and running on port: ", +PORT);
     });
   });
 
